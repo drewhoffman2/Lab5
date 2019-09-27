@@ -5,26 +5,59 @@ date: "9/27/2019"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+**Team Section:**
+
+**Arizona, California, Colorado, Texas, and Illinois**
+
+```{r, echo=FALSE}
+
 ```
 
-## R Markdown
+**Information That the Plot Conveys:**
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+Year of most milk production:
 
-```{r cars}
-summary(cars)
+Year of least milk production:
+
+2017 5 states with most milk:
+
+2017 5 states with least milk:
+
+**Individual Sections**
+
+**Drew:**
+
+```{r, echo=FALSE}
+
 ```
 
-## Including Plots
+**Brandon:**
 
-You can also embed plots, for example:
+```{r, echo=FALSE}
 
-```{r pressure, echo=FALSE}
-plot(pressure)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+**David:**
+
+```{r, echo=FALSE}
+
+```
+
+**Tanner:**
+
+```{r, echo=FALSE}
+
+```
+
+**Burke:**
+
+```{r, echo=FALSE}
+
+```
+
+**Most helpful thing:**
+
+
+**Ethical Analysis**
+
