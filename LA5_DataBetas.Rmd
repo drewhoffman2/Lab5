@@ -47,7 +47,7 @@ Year of least milk production:
 **Tanner:**
 
 ```{r, echo=FALSE}
-testing
+
 ```
 
 **Burke:**
