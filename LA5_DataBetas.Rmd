@@ -39,10 +39,13 @@ ggplot() +
 
 **Information That the Plot Conveys:**
 
+```{r, echo = FALSe}
+ggplot(data = milk, aes(x = as.factor(year), y = (milk_million), fill = as.factor(year), width = .25)) +
+  geom_col()+coord_flip() + ylab('Milk, Millions of Pounds') + xlab('Year') + labs(fill = 'Year by Color')
+```
+Year of most milk production: The year in which the most milk was produced was 2017, as shown by the bar shart below. The chart shows the total milk produced in millions of pounds for each year.
 
-Year of most milk production:
-
-Year of least milk production:
+Year of least milk production: The year in which the least amount of milk was produced is 1975, as shown by the graph.
 
 2017 5 states with most milk:
 
@@ -56,6 +59,7 @@ Year of least milk production:
 
 ```
 
+<<<<<<< Updated upstream
 **Brandon:**
 
 ```{r, echo=FALSE}
@@ -77,7 +81,24 @@ test
 **Burke:**
 
 ```{r, echo=FALSE}
+library(tidyverse)
 
+milk <- read.csv('state_milk_production.csv')
+
+milk <- milk %>%
+  mutate(milk_million = milk_produced/1000000)
+
+milk1999 <- milk %>%
+  filter(year == 1999)
+head(milk1999)
+
+ggplot(data = milk1999, aes(x = milk_million)) +
+  geom_density() + 
+  ggtitle('Estimated Distribution of Milk Production, 1999')+
+  xlab('Pounds of Milk, Millions')+
+  ylab('Density')
+
+summarize(milk1999,overall_mean = mean(milk_million, na.rm = TRUE), overall_median = median(milk_million, na.rm = TRUE))
 ```
 
 **Most helpful thing:**
@@ -85,3 +106,25 @@ test
 
 **Ethical Analysis**
 
+=======
+```{r, echo = FALSE}
+library(tidyverse)
+
+milk <- read.csv('state_milk_production.csv')
+
+milk <- milk %>%
+  mutate(milk_million = milk_produced/1000000)
+
+milk1999 <- milk %>%
+  filter(year == 1999)
+head(milk1999)
+
+ggplot(data = milk1999, aes(x = milk_million)) +
+  geom_density() + 
+  ggtitle('Estimated Distribution of Milk Production, 1999')+
+  xlab('Pounds of Milk, Millions')+
+  ylab('Density')
+
+summarize(milk1999,overall_mean = mean(milk_million, na.rm = TRUE), overall_median = median(milk_million, na.rm = TRUE))
+```
+>>>>>>> Stashed changes
