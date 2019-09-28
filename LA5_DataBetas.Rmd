@@ -47,9 +47,20 @@ Year of most milk production: The year in which the most milk was produced was 2
 
 Year of least milk production: The year in which the least amount of milk was produced is 1975, as shown by the graph.
 
-2017 5 states with most milk:
+2017 5 states with most milk: From the table below, the states that produced the most milk in 2017 were: California, Wisconsin, New York, Idaho, and Texas.
+```{r}
+filter(milk, year == 2017) %>%
+  arrange(desc(milk_produced)) %>%
+  group_by(milk_produced)
+```
 
-2017 5 states with least milk:
+
+2017 5 states with least milk: From the table below, the states that produced the least amount of milk in 2017 were: Alaska, Rhode Island, Hawaii, Aransas, and Alabama.
+```{r}
+filter(milk, year == 2017) %>%
+  arrange((milk_produced)) %>%
+  group_by(milk_produced)
+```
 
 **Individual Sections**
 
