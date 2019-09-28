@@ -39,10 +39,12 @@ ggplot() +
 
 **Information That the Plot Conveys:**
 
-```{r, echo = FALSe}
+```{r, echo = FALSE}
 ggplot(data = milk, aes(x = as.factor(year), y = (milk_million), fill = as.factor(year), width = .25)) +
   geom_col()+coord_flip() + ylab('Milk, Millions of Pounds') + xlab('Year') + labs(fill = 'Year by Color')
 ```
+
+
 Year of most milk production: The year in which the most milk was produced was 2017, as shown by the bar shart below. The chart shows the total milk produced in millions of pounds for each year.
 
 Year of least milk production: The year in which the least amount of milk was produced is 1975, as shown by the graph.
@@ -86,7 +88,6 @@ filter(milk, year == 2017) %>%
 **Tanner:**
 
 ```{r, echo=FALSE}
-test
 ```
 
 **Burke:**
