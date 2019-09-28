@@ -27,11 +27,14 @@ milksub <- milk %>%
   filter(state %in% c('Arizona','California','Colorado','Illinois','Texas')) %>%
   select(state, year, milk_million)
 
-ggplot(data = milksub, aes(x = year, y = milk_million, color = state)) +
-  geom_point() + 
+milkavg <- milk %>% select(year, milk_million) %>% group_by(year) %>% summarise(avg = sum(milk_million)/50)
+
+ggplot() +
+  geom_point(data = milksub, aes(x = year, y = milk_million, color = state)) + 
   ggtitle('Pounds of milk over time by state') +
   xlab('Year') +
-  ylab('Milk Produced (Million lb)')
+  ylab('Milk Produced (Million lb)') +
+  geom_smooth(data=milkavg, aes(x=year, y=avg), color='black')
 ```
 
 **Information That the Plot Conveys:**
