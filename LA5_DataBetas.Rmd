@@ -71,8 +71,28 @@ filter(milk, year == 2017) %>%
 **Drew:**
 
 ```{r, echo=FALSE}
+milk2000 <- milk %>%
+  filter(year == 2000)
+head(milk2000)
+
+ggplot(data = milk2000, aes(x = as.factor(year), y = milk_million, fill = as.factor(year))) +
+  geom_boxplot() +
+  ggtitle('Pounds of milk produced at the state-level in 2000') + 
+  scale_fill_discrete(name = 'Year') + 
+  xlab('Year') +
+  ylab('Milk Produced (Millions lb)')
+
+summarise(milk2000, overall_mean = mean(milk_million, na.rm = TRUE), overall_median = median(milk_million, na.rm = TRUE))
 
 ```
+
+Average Milk Produced in 2000: 3347.84 million pounds
+
+Median Milk Produced in 2000: 1453.5 million pounds
+
+Most Milk in 2000: California
+
+Least Milk in 2000: Alaska
 
 **Brandon:**
 
