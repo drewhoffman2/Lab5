@@ -139,6 +139,8 @@ ggplot(data = milk1998, aes(x = milk_million)) +
 summarise(milk1998, overall_mean = mean(milk_million, na.rm = TRUE), overall_median = median(milk_million, na.rm = TRUE))
 ```
 
+Created a density plot for milk production in 1998. Used the table I created, 'milk1998', to look for the highest- and lowest-producing states, and used the summarise function to get the average and median production.
+
 Average Milk Produced in 1998: 3145.22 million pounds
 
 Median Milk Produced in 1998: 1411.5 million pounds
