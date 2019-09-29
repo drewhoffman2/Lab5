@@ -173,3 +173,4 @@ summarize(milk1999,overall_mean = mean(milk_million, na.rm = TRUE), overall_medi
 
 **Ethical Analysis**
 
+Someone who could benefit from the results of this analysis is a prospective dairy investor who is looking for the states with a growing dairy market. They could use this information to determine which markets will generate the most returns and be the best use of their capital. It also may be useful for someone doing a study on dairy in American culture. By comparing dairy output increases to American population increases, one could infer the cultural relevance of dairy based on per capita production.  Someone that could suffer as a result of this analysis may be dairy farmers in Alaska or another state with low milk production. With the knowledge that their state is the lowest in the country, investors may not be interested in supporting these farms in the long term. 
