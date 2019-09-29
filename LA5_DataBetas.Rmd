@@ -72,7 +72,6 @@ filter(milk, year == 2017) %>%
 
 ```
 
-<<<<<<< Updated upstream
 **Brandon:**
 
 ```{r, echo=FALSE}
@@ -118,25 +117,3 @@ summarize(milk1999,overall_mean = mean(milk_million, na.rm = TRUE), overall_medi
 
 **Ethical Analysis**
 
-=======
-```{r, echo = FALSE}
-library(tidyverse)
-
-milk <- read.csv('state_milk_production.csv')
-
-milk <- milk %>%
-  mutate(milk_million = milk_produced/1000000)
-
-milk1999 <- milk %>%
-  filter(year == 1999)
-head(milk1999)
-
-ggplot(data = milk1999, aes(x = milk_million)) +
-  geom_density() + 
-  ggtitle('Estimated Distribution of Milk Production, 1999')+
-  xlab('Pounds of Milk, Millions')+
-  ylab('Density')
-
-summarize(milk1999,overall_mean = mean(milk_million, na.rm = TRUE), overall_median = median(milk_million, na.rm = TRUE))
-```
->>>>>>> Stashed changes
