@@ -5,7 +5,7 @@ date: "9/27/2019"
 output: html_document
 ---
 
-```{r}
+```{r inlcude = FALSE}
 # Load tidyverse
 library(tidyverse)
 
@@ -31,7 +31,7 @@ milkavg <- milk %>% select(year, milk_million) %>% group_by(year) %>% summarise(
 
 ggplot() +
   geom_point(data = milksub, aes(x = year, y = milk_million, color = state)) + 
-  ggtitle('Pounds of milk over time by state') +
+  ggtitle('Pounds of milk produced over time by state') +
   xlab('Year') +
   ylab('Milk Produced (Million lb)') +
   geom_smooth(data=milkavg, aes(x=year, y=avg), color='black')
@@ -53,6 +53,7 @@ Year of least milk production: The year in which the least amount of milk was pr
 ```{r}
 filter(milk, year == 2017) %>%
   arrange(desc(milk_produced)) %>%
+  top_n(5) %>%
   group_by(milk_produced)
 ```
 
@@ -61,6 +62,7 @@ filter(milk, year == 2017) %>%
 ```{r}
 filter(milk, year == 2017) %>%
   arrange((milk_produced)) %>%
+  top_n(-5) %>%
   group_by(milk_produced)
 ```
 
@@ -75,7 +77,24 @@ filter(milk, year == 2017) %>%
 **Brandon:**
 
 ```{r, echo=FALSE}
+milk2000 <- milk %>%
+  filter(year == 2000)
 
+ggplot(data = milk2000, mapping = (aes(x = milk_million))) +
+  geom_density()+
+  ggtitle('Esitimated Distribution of milk (per million pounds) in the year 2000')+
+  xlab('Milk produced (millon lb)')
+most_produced <- milk2000 %>%
+  top_n(1)
+least_produced <- milk2000 %>%
+  top_n(-1)
+'State with most milk production in the year 2000: California'
+most_produced
+'State with least milk production in the year 2000: Alaska'
+least_produced
+milk2000 %>%
+  arrange(milk_million) %>%
+  summarise(mean = mean(milk_million, na.rm = TRUE), median = median(milk_million, na.rm = TRUE))
 ```
 
 **David:**
