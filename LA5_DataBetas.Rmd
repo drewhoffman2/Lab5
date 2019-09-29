@@ -150,13 +150,6 @@ Least Milk in 1998: Alaska
 **Burke:**
 
 ```{r, echo=FALSE}
-library(tidyverse)
-
-milk <- read.csv('state_milk_production.csv')
-
-milk <- milk %>%
-  mutate(milk_million = milk_produced/1000000)
-
 milk1999 <- milk %>%
   filter(year == 1999)
 head(milk1999)
