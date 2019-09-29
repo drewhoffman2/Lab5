@@ -116,6 +116,8 @@ milk2000 %>%
   arrange(milk_million) %>%
   summarise(mean = mean(milk_million, na.rm = TRUE), median = median(milk_million, na.rm = TRUE))
 ```
+I used the milk production data from my birth year, 2000. I used a geom_density plot to show the esimated distribution of during that year. I then used the top_n function to get the top and bottom producers (California and Alaska) during the year 2000. I then used summarise() and got the mean and median of the data.
+
 
 **David:**
 
@@ -170,6 +172,7 @@ summarize(milk1999,overall_mean = mean(milk_million, na.rm = TRUE), overall_medi
 
 **Most helpful thing:**
 
+A piece of this data that we found most helpful is the growth of milk over the past fourty-seven years, the production of milk from the year 1970 to 2017 has nearly doubled, despite California milk production more than quadrupling from 1970 to 2017. This is interesting and helpful to us since we can analyze factors outside of Milk production such as economic growth that has caused California to more than quadruple in their milk production. We also found in the programming part of this data the benefit of being able to summarise all of our data and create an easy to read table and graph that looks professional.
 
 **Ethical Analysis**
 
