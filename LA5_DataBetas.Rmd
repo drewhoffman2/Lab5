@@ -80,9 +80,52 @@ filter(milk, year == 2017) %>%
 
 **David:**
 
-```{r, echo=FALSE}
+The plot below shows the distribution of milk production in 1999.
+```{r}
+ninetyNine <-
+  filter(milk, year == 1999)
 
+ggplot(data = ninetyNine, aes(x = milk_million)) +
+  geom_density() +
+  ggtitle('Distribution of Milk in 1999') +
+  xlab('Milk in Millions of Pounds') +
+  ylab('Density')
 ```
+The median milk production for each state is shown in the table below.
+```{r}
+medianNinetyNine <- ninetyNine %>%
+  group_by(state) %>%
+  summarise(Median_Production = median(milk_million)) %>%
+  as_tibble()
+
+medianNinetyNine
+```
+The mean milk production for each state is shown in the table below.
+```{r}
+meanNinetyNine <- ninetyNine %>%
+  group_by(state) %>%
+  summarise(Mean_Production = mean(milk_million)) %>%
+  as_tibble()
+
+meanNinetyNine
+```
+The table below shows the states that produced the most milk. Caifornia was the most with 30444 million pounds.
+```{r}
+mostNinetyNine <- ninetyNine %>%
+  arrange(desc(milk_produced)) %>%
+  group_by(milk_produced)
+
+mostNinetyNine
+```
+The table below shows the states that produced the least milk. Alaska was the least with 14 million pounds.
+```{r}
+leastNinetyNine <- ninetyNine %>%
+  arrange(milk_produced) %>%
+  group_by(milk_produced)
+
+leastNinetyNine
+```
+
 
 **Tanner:**
 
