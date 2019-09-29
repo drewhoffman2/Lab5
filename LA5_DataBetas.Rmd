@@ -106,6 +106,15 @@ milk2000 %>%
 **Tanner:**
 
 ```{r, echo=FALSE}
+milk1998 <- milk %>% filter(year == 1998)
+head(milk1998)
+ggplot(data = milk1998, aes(x = milk_million)) +
+  geom_density() +
+  ggtitle('Estimated Distribution of Milk Production, 1998') +
+  xlab('Pounds of Milk, Millions') +
+  ylab('Density')
+
+summarise(milk1998, overall_mean = mean(milk_million, na.rm = TRUE), overall_median = median(milk_million, na.rm = TRUE))
 ```
 
 **Burke:**
