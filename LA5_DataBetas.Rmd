@@ -206,11 +206,16 @@ ggplot(data = milk1999, aes(x = milk_million)) +
   ylab('Density')
 
 summarize(milk1999,overall_mean = mean(milk_million, na.rm = TRUE), overall_median = median(milk_million, na.rm = TRUE))
+arrange(milk1999, desc(milk_million))
 ```
 
+
+
+As shown in the data frames above, The mean milk produced for the year 1999 was 3251.8 million pounds. The median milk produced was 1418 million pounds. The state that produced the most
+milk in 1999 was California, with 30444 million pounds. The state that produced the least was Alaska, with 14 million pounds.
 **Most helpful thing:**
 
-A piece of this data that we found most helpful is the growth of milk over the past fourty-seven years, the production of milk from the year 1970 to 2017 has nearly doubled, despite California milk production more than quadrupling from 1970 to 2017. This is interesting and helpful to us since we can analyze factors outside of Milk production such as economic growth that has caused California to more than quadruple in their milk production. We also found in the programming part of this data the benefit of being able to summarise all of our data and create an easy to read table and graph that looks professional.
+A piece of this data that we found most helpful is the growth of milk over the past fourty-seven years, the production of milk from the year 1970 to 2017 has nearly doubled, despite California milk production more than quadrupling from 1970 to 2017. This is interesting and helpful to us since we can analyze factors outside of milk production such as economic growth that has caused California to more than quadruple in their milk production. We also found in the programming part of this data the benefit of being able to summarise all of our data and create an easy to read table and graph that looks professional.
 
 **Ethical Analysis**
 
